@@ -1,0 +1,48 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+
+start: nop
+
+LXI H,2050H
+
+MOV B,M
+
+MVI D,01
+
+L2: CALL MUL
+
+DCR B
+
+JNZ L2
+
+INX H;2051
+
+MOV M,D
+
+hlt
+
+MUL: MOV C,B
+
+XRA A
+
+L1: ADD D
+
+DCR C
+
+JNZ L1
+
+MOV D,A
+
+RET
+
+hlt
+
+
+
